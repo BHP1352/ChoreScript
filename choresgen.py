@@ -49,8 +49,7 @@ chores = ['Take out full trashes in the house as needed and to curb on Tuesday',
           'Groundskeeping (clean trash/mow/clean porch) on Weekend',\
           'Bye week']
 
-emails = ['torin206@gmail.com','bkpratt@uw.edu','hdchipman@msn.com',\
-            'jwmouser@gmail.com', 'perezje43@gmail.com','nick.garzon@gmail.com']
+emails = ['foo@bar.com','bar@foo.com']
 
 sub = 'Chore assignments for the week of %s' % today_s
 
