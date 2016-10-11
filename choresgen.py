@@ -10,32 +10,32 @@ from email.mime.multipart import MIMEMultipart
 
 brajs = {
   'Kelly': {
-      'phone':'+12068192190',
+      'phone':'+PHONENUM',
       'email':'bkpratt@uw.edu',
       'chore':''
     },
   'Nicky': {
-      'phone':'+12063590744',
+      'phone':'+PHONENUM',
       'email':'nick.garzon@gmail.com',
       'chore':''
     },
   'Jake': {
-      'phone':'+15092209113',
+      'phone':'+PHONENUM',
       'email':'jwmouser@gmail.com',
       'chore':''
     },
   'Torin': {
-      'phone':'+12063309704',
+      'phone':'+PHONENUM',
       'email':'torin206@gmail.com',
       'chore':''
     },
   'Jeremy': {
-      'phone':'+12062912466',
+      'phone':'+PHONENUM',
       'email':'perezje43@gmail.com',
       'chore':''
     },
   'Chip': {
-      'phone':'+12062406461',
+      'phone':'+PHONENUM',
       'email':'hdchipman@msn.com',
       'chore':''
     }
@@ -73,7 +73,7 @@ def calculate_weeks():
 
 # iterates through all brajs and texts them their chore
 def send_texts():
-  ACCOUNT_SID = "ACa6b4755c8f58071c638a0b5f775e90e9" 
+  ACCOUNT_SID = "SIDPLACEHOLDER" 
   AUTH_TOKEN = open('twilio_token.txt', 'r').read()
   client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
   for braj in brajs:
