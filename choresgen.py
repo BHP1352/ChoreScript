@@ -43,15 +43,15 @@ brajs = {
 
 # Need this to maintain the order that was used in the last script
 # perhaps we can get rid of this once we make a full rotation through the chores
-braj_order = ["Jeremy", "Chip", "Kelly", "Nicky", "Jake", "Torin"]
+braj_order = ["Chip", "Jeremy", "Nicky", "Jake", "Kelly", "Torin"]
 
 chores = [
-  'Take out full trashes in the house as needed and to curb on Tuesday',
-  'Sweep and Clean kitchen/dining room/living room floor on Weekend',
-  'Clean bathroom (floor/sink/toilet) (tub if dirty) on Weekend',
-  'Organize kitchen (Dishes/stovetop/counters) on Weekend',
-  'Groundskeeping (clean trash/mow/clean porch) on Weekend',
-  'Bye week'
+  'Clean kitchen counters/sink/burners, clean and put away remaining dishes',
+  'Sweep dining room/kitchen, wipe down dining room table',
+  'Sweep/vacuum living room, throw away trash and wipe down surfaces',
+  'Clean bathrooms (wipe down countertops/sinks, sweep, clean toilet/tub)',
+  'Take out trash as it fills up throughout the week, take trash/recycling to curb on monday night',
+  'Pick up trash outside the house and make sure garage can be walked through'
 ]
 
 ### Methods ###################################################################### 
@@ -82,7 +82,6 @@ def send_texts():
     client.messages.create(from_='+12062020160',
                          to=number,
                          body=text)
-
 
 # emails all chores to everyone
 # password for gmail account must be kept in password.txt
