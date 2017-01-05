@@ -48,7 +48,7 @@ brajs = {
 
 # Need this to maintain the order that was used in the last script
 # perhaps we can get rid of this once we make a full rotation through the chores
-braj_order = ["Chip", "Jeremy", "Nicky", "Jake", "Kelly", "Torin"]
+braj_order = ["Chip", "Jeremy", "Cody", "Nicky", "Jake", "Kelly", "Torin"]
 
 chores = [
   'Clean kitchen counters/sink/burners, clean and put away remaining dishes',
