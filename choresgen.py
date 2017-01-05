@@ -38,20 +38,26 @@ brajs = {
       'phone':'+12062406461',
       'email':'hdchipman@msn.com',
       'chore':''
+    },
+  'Cody': {
+      'phone':'+14083400833',
+      'email':'codywalke12@gmail.com',
+      'chore':''
     }
 }
 
 # Need this to maintain the order that was used in the last script
 # perhaps we can get rid of this once we make a full rotation through the chores
-braj_order = ["Jeremy", "Chip", "Kelly", "Nicky", "Jake", "Torin"]
+braj_order = ["Chip", "Jeremy", "Nicky", "Jake", "Kelly", "Torin"]
 
 chores = [
-  'Take out full trashes in the house as needed and to curb on Tuesday',
-  'Sweep and Clean kitchen/dining room/living room floor on Weekend',
-  'Clean bathroom (floor/sink/toilet) (tub if dirty) on Weekend',
-  'Organize kitchen (Dishes/stovetop/counters) on Weekend',
-  'Groundskeeping (clean trash/mow/clean porch) on Weekend',
-  'Bye week'
+  'Clean kitchen counters/sink/burners, clean and put away remaining dishes',
+  'Sweep dining room/kitchen, wipe down dining room table',
+  'Sweep/vacuum living room, throw away trash and wipe down surfaces',
+  'Clean 1st floor bathroom (wipe down countertops/sinks, sweep, clean toilet/tub)',
+  'Clean basement bathroom, sweep laudnry area and wipe down countertops in basement',
+  'Take out trash as it fills up throughout the week, take trash/recycling to curb on monday night',
+  'Pick up trash outside the house and make sure garage can be walked through'
 ]
 
 ### Methods ###################################################################### 
@@ -74,7 +80,7 @@ def calculate_weeks():
 # iterates through all brajs and texts them their chore
 def send_texts():
   ACCOUNT_SID = "ACa6b4755c8f58071c638a0b5f775e90e9" 
-  AUTH_TOKEN = open('twilio_token.txt', 'r').read()
+  AUTH_TOKEN = open('.\\twilio_token.txt', 'r').read()
   client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
   for braj in brajs:
     text = "BRAJ HOUSE MESSAGING\n" + braj + "\nYour chore for this week: " + brajs[braj]['chore'] 
@@ -82,7 +88,6 @@ def send_texts():
     client.messages.create(from_='+12062020160',
                          to=number,
                          body=text)
-
 
 # emails all chores to everyone
 # password for gmail account must be kept in password.txt
@@ -95,7 +100,7 @@ def send_mail():
     msg['To'] = toaddr
     msg['Subject'] = "House duties for this week"
     body = mail_text()
-    password = open('password.txt', 'r').read()
+    password = open('.\\password.txt', 'r').read()
     msg.attach(MIMEText(body, 'plain'))
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
